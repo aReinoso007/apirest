@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      lang="en">
+
+
+
+<h:form>
+    <p:outputLabel>Ingresar nuevo usuario</p:outputLabel>
+    <br/>
+    <p:outputLabel>Nombre</p:outputLabel>
+    <h:inputText value="#{clienteView.cliente.nombre}"/>
+    <p:outputLabel>Apellido</p:outputLabel>
+    <h:inputText value="#{clienteView.cliente.apellido}"/>
+    <p:outputLabel>Email</p:outputLabel>
+    <h:inputText value="#{clienteView.cliente.email}"/>
+    <br/>
+    <p:commandButton action="#{clienteView.saveCliente(clienteView.cliente)}" value="Registrar"></p:commandButton>
+</h:form>
+
+
+<br>
+
+</br>
+<p:outputLabel>Listado de usuarios</p:outputLabel>
+<p:dataTable value="#{clienteView.clienteList}" var="cli">
+    <p:column headerText="ID">#{cli.id}</p:column>
+    <p:column headerText="Nombre">#{cli.nombre}</p:column>
+    <p:column headerText="Apellido">#{cli.apellido}</p:column>
+    <p:column headerText="Email">#{cli.email}</p:column>
+</p:dataTable>
+
+</html>
